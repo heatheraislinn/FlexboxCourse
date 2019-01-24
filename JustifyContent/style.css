@@ -9,7 +9,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* Some default styles to make each box visible */
 .box {
   color:white;
-  font-size: 100px;
+  font-size: 20px;
   text-align: center;
   text-shadow:4px 4px 0 rgba(0,0,0,0.1);
   padding:10px;
@@ -31,22 +31,16 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display:flex;
+  /* justify-content: flex-start; this is the default setting */
+  /* justify-content: flex-end; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  /* justify-content aligns elements along the main axis -
+    to take advantage of it in flex-direction: column, set a height */
 }
 
-.box {
-    flex: 1; /* distributes elements evenly */
-}
-
-.box3 {
-    /* order: 0; this is the default setting */ 
-    order: 1;
-}
-
-.box7 {
-    order: 2;
-}
-
-/* Order moves things to the row end like z-index moves things in space. So, here, boxes
-    1, 2, 4, 5, 6, 8, 9, and 10 have order 0; box 3 has order 1; box 7 has order 2 */
-
-/* Also works with negative numbers, sending things to front of row */
